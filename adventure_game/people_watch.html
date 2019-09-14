@@ -1,0 +1,51 @@
+<html>
+<!doctype html>
+<html lang=en>
+<head>
+	<meta charset=utf-8>
+	<title>Finding Dante</title>
+	<link rel="stylesheet" type="text/css" href="resources/css/main.css" >
+</head>
+
+<body>
+	<div id="grid">
+		<p>You decide to sit in the lobbby and watch the strangers pass by. The museum is busy today and the strangers are more captivating to you than the pieces of art they have come to see.</p>
+		<p>One of the janitors of the museum is cleaning the area next to you. He seems tired and decides to take a seat next to you to rest his feet. He notices you and starts a conversation.</p>
+		<p>"Sure is busy today. You not interested in the art? I've got something you might be interested in. Follow me.</p> 
+		<p>You follow the janitor to the basement of the museum where he shows you the utility room. All around the room are trinkets and objects the janitor has procured over the years.</p> 
+		<p>The janitor pulls a box off a shelf and opens it. "Check this out." He takes a ring out the box and shows it to you. "Found this lying around the other day."</p>
+		<p>The phone begins to ring and the janitor turns away from you and goes to answer the phone. He leaves the ring on the table next to you.</p> 
+		<p> What do you do?</p>
+		<div class="container">
+		<button type="button" onclick="stealRing()">Steal the ring</button>
+		<button type="button" onclick="leave()">Leave the room</button>
+		</div>
+		<div class="hidden ring">
+			<p>You steal the ring and slip out of the office. You forget the way you came and decide to walk down one of the many hallways. You come to a door that is ajar and has no sign. You here footsteps behind you and in a panic decided to go through the door.</p>
+			<a href="meet_death.html">Go through the door</a>
+	</div>
+		<div class="hidden no_ring">
+			<p>You leave the utility room and decided to have a look around the basement. You walk down a hallway that ends with a door. The door has no sign, but has been left ajar. Feelin bored and slighty rebellious you decide to see where the door leads.</p>
+			<a href="meet_death.html">Go through the door</a> 
+
+	<script src="vendors/jquery/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+		function addRing(){
+			localStorage.setItem("ring", true);
+		}
+		function stealRing(){
+			addRing();
+			alert("Ring added to inventory");
+			$(".ring").show();
+			$("button").hide();
+		}
+		function leave(){
+			$(".no_ring").show();
+			$("button").hide();
+		}
+	</script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,60 @@
+<html>
+<!doctype html>
+<html lang=en>
+<head>
+	<meta charset=utf-8>
+	<title>Finding Dante</title>
+	<link rel="stylesheet" type="text/css" href="resources/css/main.css" >
+</head>
+
+<body>
+	<div id="grid">
+		<p>You walk up a flight of stairs and find yourself in an open room. The floor is tiled in black and white checkers. A man sits at a table in the middle of the room."Hello I am death. I have been watching your journey thus far. I know you wish to find Dante. The next part of your journey is through that door." He turns and points to a red door behind him.</p>	
+	<p class="hidden ring">"However you have stolen something that is very dear to me.That ring used to belong to my lost love. So this is where your journey ends."</p>
+	<p class="hidden ring">You are dead.</p>
+	<p class="hidden cup">"However, I would like to invite you to a friendly drink." Death waves his hand and a craft of wine appears.</p>
+	
+		<div class="container">
+			<a class="hidden no_ring"href="wall.html">Go through the red door</a>
+			<a class ="hidden cup"href="dante.html">Drink with death</a>
+			<a  class ="hidden ring"href="index.html">Restart</a>
+		</div>
+	</div>
+	<script src="vendors/jquery/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+		function haveRing(){
+			ring = localStorage.getItem("ring");
+			if (ring == null || ring == "null"){
+				return false;
+			}
+			else{
+				return true;
+			}
+		}
+
+		function haveCup(){
+			cup = localStorage.getItem("cup");
+			if (cup == null || cup == "null"){
+				return false;
+			}
+			else{
+				return true;
+			}
+		}
+		if(haveRing()){
+			$(".ring").show();
+		}else if (haveCup()){
+			$(".cup").show();
+			$(".no_ring").show();
+		}else{
+			$(".no_ring").show();
+		}
+	
+
+	</script>
+</body>
+</html>
+
+
+
+

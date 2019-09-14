@@ -1,0 +1,65 @@
+<html>
+<!doctype html>
+<html lang=en>
+<head>
+	<meta charset=utf-8>
+	<title>Finding Dante</title>
+	<link rel="stylesheet" type="text/css" href="resources/css/main.css" >
+</head>
+
+<body>
+	<div id="grid">
+		<p> "Wondeful. Follow me."</p>
+		<p>The old man leads you away from the painting, past several exhibits. He takes you through a door leading down into the basement of the museum. There he stops and turns to you.</p>
+		<p>"I have some items for you that may come in handy on your search. You may pick only one.</p>
+		<p> The old man offers you one of three items. Which one do you accept?</p>  
+		<div class="container">
+		<button type="button" onclick="chooseDiary()">Diary</button>
+		<button type="button" onclick="chooseCup()">Cup</button>
+		<button  type="button" onclick="chooseOar()">Oar</button>
+		</div>	
+		<div class="hidden">
+
+			<p>"A fine choice. Now it's time to begin your search from here you may either journey up this staircase to the left, or through this tunnel to the right."</p>
+			<p>Which way do you choose to go?</p>
+			<a href="meet_death.html">The staircase</a>
+			<a href="lake.html">The tunnel</a>
+		</div>
+	</div>
+
+	<script src="vendors/jquery/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+	function addDiary(){
+		localStorage.setItem("diary",true);		
+	}
+	function addCup(){
+		localStorage.setItem("cup", true);
+	}
+	function addOar(){
+		localStorage.setItem("oar", true);
+	}
+
+	function chooseDiary(){
+		alert("Diary added to inventory");
+		addDiary();
+		$("button").hide();
+		$(".hidden").show();	
+	}
+	function chooseCup(){
+		alert("Cup added to inventory");
+		addCup();
+		$("button").hide();
+		$(".hidden").show();
+	}
+	function chooseOar(){
+		alert("Oar added to inventory");
+		addOar();
+		$("button").hide();
+		$(".hidden").show();
+	}
+	</script>
+</body>
+</html>
+
+
+

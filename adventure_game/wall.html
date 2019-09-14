@@ -1,0 +1,46 @@
+<html>
+<!doctype html>
+<html lang=en>
+<head>
+	<meta charset=utf-8>
+	<title>Finding Dante</title>
+	<link rel="stylesheet" type="text/css" href="resources/css/main.css" >
+</head>
+
+<body>
+	<div id="grid">
+		<p class="hidden note">While searching through one of the books, a note falls out and you pick it up. The note says Red Yellow Blue.</p>
+		<p>You walk through the door on the other side of the library. It leads down a path that ends in a brick wall. There are three bricks painted different colors on the wall. One brick is red, one is yellow, and one is blue.</p>
+		<p>You decide to touch each brick once</p>
+		<p>What order do you press them in?</p>
+		<div class="container">
+			<a href="dante.html">R,Y,B</a>
+			<a href="dead_wall.html">B,Y,R</a>
+			<a href="dead_wall.html">Y,R,B</a>
+		</div>
+	</div>
+
+	<script src="vendors/jquery/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+		function hasNote(){
+			note = localStorage.getItem("note");
+			if (note == null || note == "null"){
+				return false;
+			}else{
+				return true;
+			}
+		}
+
+		if(hasNote()){
+			$(".note").show();
+			
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
+

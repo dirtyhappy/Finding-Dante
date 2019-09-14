@@ -1,0 +1,37 @@
+<html>
+<!doctype html>
+<html lang=en>
+<head>
+	<meta charset=utf-8>
+	<title>Finding Dante</title>
+	<link rel="stylesheet" type="text/css" href="resources/css/main.css" >
+</head>
+
+<body>
+	<div id="grid">
+		<p>You say hello and wave at the cyclops. A polie fellow, the cyclops waves back. Then the cyclops turns to the wall and smashes a hole through it. The hole reveals a passage. The cyclops picks you up and gently shoves you through the hole.</p>
+		<p>The path ends with two large wooden doors. You open the doors and walk through. You find yourself in a gigantic library filled with books. On the other side of the room is a door.</p>
+		<p>What do you do?</p>
+		<div class="container">
+			<button type="button" onclick="search()">Search through the library</button>
+			<a href="wall.html">Go through the door</a>
+		</div>
+	</div>
+
+	<script src="vendors/jquery/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+		function addNote(){
+			localStorage.setItem("note", true);
+		}
+		function search(){
+			addNote();
+			window.location.href = "wall.html";
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
